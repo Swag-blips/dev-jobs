@@ -1,13 +1,11 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 function App() {
-
-
   return (
     <>
-    <p>Hello world</p>
+      <p className="font-kubmh text-[20px]">Senior software engineer</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
