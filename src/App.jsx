@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <p className="font-kubmh text-[20px]">Senior software engineer</p>
+      <Header />
     </>
   );
 }
