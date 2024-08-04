@@ -33,7 +33,7 @@ const Header = () => {
               name="filter"
               id="filter"
               placeholder="Filter by title..."
-              className="mt-[32px] w-full h-[80px] rounded-[6px] px-[16px]"
+              className="mt-[32px] text-[#19202D] w-full h-[80px] rounded-[6px] px-[16px]"
             />
 
             <div className="absolute right-0 top-5 mr-[16px] mt-[24px] flex items-center gap-[24px]">
