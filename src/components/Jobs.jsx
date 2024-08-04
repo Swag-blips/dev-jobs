@@ -1,24 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-
-
-import jobsData from "../../data.json";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { JobContext } from "../../context/JobsContext";
 
 const Jobs = () => {
-  const [data, setData] = useState([]);
-  const navigate = useNavigate();
+  const { jobs } = useContext(JobContext);
 
-  useEffect(() => {
-    setData(jobsData);
-  }, []);
-
-
-
-  console.log(data);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {data.map((job) => (
+      {jobs.map((job) => (
         <div key={job.id} className="px-[24px]   mt-[96px]">
           <Link to={`/jobs/${job.id}`}>
             <div className="w-full relative  pl-[32px] bg-white  rounded-[6px] ">
