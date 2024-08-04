@@ -1,56 +1,59 @@
 import React, { useEffect, useState } from "react";
-import scoot from "../assets/logos/scoot.svg";
+import { useNavigate, Link } from "react-router-dom";
+
 
 import jobsData from "../../data.json";
 
 const Jobs = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setData(jobsData);
   }, []);
 
+
+
   console.log(data);
 
   return (
-    <>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {data.map((job) => (
-        <div
-          key={job.id}
-          className="px-[24px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-[96px]"
-        >
-          <div className="w-full relative pl-[32px] bg-white  rounded-[6px] ">
-            <figure
-              style={{ backgroundColor: `${job.logoBackground}` }}
-              className="w-[50px] rounded-[15px] h-[50px] absolute top-[-24px] flex items-center justify-center  z-50"
-            >
-              <img src={job.logo} alt="company-logo" className="" />
-            </figure>
+        <div key={job.id} className="px-[24px]   mt-[96px]">
+          <Link to={`/jobs/${job.id}`}>
+            <div className="w-full relative  pl-[32px] bg-white  rounded-[6px] ">
+              <figure
+                style={{ backgroundColor: `${job.logoBackground}` }}
+                className="w-[50px] rounded-[15px] h-[50px] absolute top-[-24px] flex items-center justify-center  z-50"
+              >
+                <img src={job.logo} alt="company-logo" className="" />
+              </figure>
 
-            <div className="flex flex-col justify-center pt-[48px]">
-              <div className="flex items-center gap-[12px]">
-                <p className="text-[#6E8098] font-normal">{job.postedAt}</p>
+              <div className="flex flex-col justify-center pt-[48px]">
                 <div className="flex items-center gap-[12px]">
-                  <div className="rounded-full h-[4px] w-[4px] bg-[#6E8098]" />
-                  <p className="text-[#6E8098] font-normal">{job.contract}</p>
+                  <p className="text-[#6E8098] font-normal">{job.postedAt}</p>
+                  <div className="flex items-center gap-[12px]">
+                    <div className="rounded-full h-[4px] w-[4px] bg-[#6E8098]" />
+                    <p className="text-[#6E8098] font-normal">{job.contract}</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col gap-[12px] mt-[16px]">
-                <h2 className="font-bold text-[20px] text-left text-[#19202D]">
-                  {job.position}
-                </h2>
-                <p className="text-[#6E8098] text-left">{job.company}</p>
-              </div>
+                <div className="flex flex-col gap-[12px] mt-[16px]">
+                  <h2 className="font-bold text-[20px] text-left text-[#19202D]">
+                    {job.position}
+                  </h2>
+                  <p className="text-[#6E8098] text-left">{job.company}</p>
+                </div>
 
-              <p className="mt-[40px] text-[#5964E0] mb-[36px]">
-                {job.location}
-              </p>
+                <p className="mt-[40px] text-[#5964E0] mb-[36px]">
+                  {job.location}
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
