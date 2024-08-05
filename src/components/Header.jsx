@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import topBg from "../assets/mobile/bg-pattern-header.svg";
 import logo from "../assets/desktop/logo.svg";
 import sun from "../assets/desktop/icon-sun.svg";
 import moon from "../assets/desktop/icon-moon.svg";
 import filter from "../assets/mobile/icon-filter.svg";
 import search from "../assets/desktop/icon-search.svg";
+import Modal from "./Modal";
 
 const Header = () => {
+  const [active, setActive] = useState(false);
+
+  console.log(active);
   return (
     <div className="font-kubmh">
       <div className="relative">
@@ -37,7 +41,11 @@ const Header = () => {
             />
 
             <div className="absolute right-0 top-5 mr-[16px] mt-[24px] flex items-center gap-[24px]">
-              <img src={filter} alt="filter" />
+              <img
+                onClick={() => setActive(!active)}
+                src={filter}
+                alt="filter"
+              />
               <button className="bg-[#5964E0] flex items-center justify-center rounded-[5px] w-[48px] h-[48px] ">
                 <img src={search} alt="search" />
               </button>
@@ -45,6 +53,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {active ? <Modal active={active} setActive={setActive} /> : ""}
     </div>
   );
 };
