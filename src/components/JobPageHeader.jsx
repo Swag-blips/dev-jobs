@@ -3,8 +3,10 @@ import topBg from "../assets/mobile/bg-pattern-header.svg";
 import logo from "../assets/desktop/logo.svg";
 import sun from "../assets/desktop/icon-sun.svg";
 import moon from "../assets/desktop/icon-moon.svg";
+import { useNavigate } from "react-router-dom";
 
 const JobPageHeader = () => {
+  const navigate = useNavigate();
   return (
     <div className="font-kubmh">
       <div className="relative">
@@ -14,7 +16,12 @@ const JobPageHeader = () => {
 
         <div className="z-50 absolute w-full top-0 mt-[32px] px-[24px] flex flex-col justify-center">
           <div className="flex items-center justify-between">
-            <img src={logo} alt="logo" className="z-50" />
+            <img
+              onClick={() => navigate("/")}
+              src={logo}
+              alt="logo"
+              className="z-50 cursor-pointer"
+            />
             <div className="flex items-center gap-[16px]">
               <img src={sun} alt="sun" />
               <label className="inline-flex items-center cursor-pointer">

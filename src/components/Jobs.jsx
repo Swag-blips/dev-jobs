@@ -5,7 +5,6 @@ import { JobContext } from "../../context/JobsContext";
 const Jobs = () => {
   const { jobs } = useContext(JobContext);
 
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {jobs.map((job) => (
@@ -16,7 +15,11 @@ const Jobs = () => {
                 style={{ backgroundColor: `${job.logoBackground}` }}
                 className="w-[50px] rounded-[15px] h-[50px] absolute top-[-24px] flex items-center justify-center  z-50"
               >
-                <img src={job.logo} alt="company-logo" className="" />
+                <img
+                  src={`./src/assets/${job.logo}`}
+                  alt="company-logo"
+                  className=""
+                />
               </figure>
 
               <div className="flex flex-col justify-center pt-[48px]">
