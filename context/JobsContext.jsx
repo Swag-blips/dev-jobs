@@ -5,13 +5,53 @@ export const JobContext = createContext();
 
 export const JobProvider = ({ children }) => {
   const [jobs, setJobs] = useState([]);
+  const [visible, setVisible] = useState(true);
+
+  const filterJobsByLocation = (location) => {
+    setJobs(jobsData);
+    if (!location) {
+      return;
+    } else {
+      setJobs((prevJob) =>
+        prevJob.filter(
+          (job) =>
+            job.location.toString().toLowerCase() === location.toLowerCase()
+        )
+      );
+    }
+
+    setVisible(false);
+  };
+
+  const filterJobsByTitle = (title) => {
+    setJobs(jobsData);
+    if (!title) {
+      return;
+    } else {
+      setJobs((prevJob) =>
+        prevJob.filter((job) =>
+          job.position.toString().toLowerCase().includes(title.toLowerCase())
+        )
+      );
+    }
+
+    setVisible(false);
+  };
 
   useEffect(() => {
     setJobs(jobsData);
   }, []);
 
   return (
-    <JobContext.Provider value={{ jobs, setJobs }}>
+    <JobContext.Provider
+      value={{
+        jobs,
+        setJobs,
+        filterJobsByLocation,
+        filterJobsByTitle,
+        visible,
+      }}
+    >
       {children}
     </JobContext.Provider>
   );

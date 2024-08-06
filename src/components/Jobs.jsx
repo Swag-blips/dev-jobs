@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { JobContext } from "../../context/JobsContext";
 
 const Jobs = () => {
-  const { jobs } = useContext(JobContext);
+  const { jobs, visible } = useContext(JobContext);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -46,6 +46,11 @@ const Jobs = () => {
           </Link>
         </div>
       ))}
+      <div className={`mx-[24px] my-[24px] ${visible ? "block" : "hidden"}`}>
+        <button className="bg-[#5964E0] h-12 w-full rounded-[5px]  text-center text-white text-base font-bold">
+          load More
+        </button>
+      </div>
     </div>
   );
 };

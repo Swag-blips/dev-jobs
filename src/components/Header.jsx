@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import topBg from "../assets/mobile/bg-pattern-header.svg";
 import logo from "../assets/desktop/logo.svg";
 import sun from "../assets/desktop/icon-sun.svg";
@@ -6,11 +6,14 @@ import moon from "../assets/desktop/icon-moon.svg";
 import filter from "../assets/mobile/icon-filter.svg";
 import search from "../assets/desktop/icon-search.svg";
 import Modal from "./Modal";
+import { JobContext } from "../../context/JobsContext";
 
 const Header = () => {
   const [active, setActive] = useState(false);
+  const [title, setTitle] = useState("");
 
-  console.log(active);
+  const { filterJobsByTitle } = useContext(JobContext);
+
   return (
     <div className="font-kubmh">
       <div className="relative">
@@ -36,17 +39,21 @@ const Header = () => {
               type="text"
               name="filter"
               id="filter"
+              onChange={(e) => setTitle(e.target.value)}
               placeholder="Filter by title..."
-              className="mt-[32px] text-[#19202D] w-full h-[80px] rounded-[6px] px-[16px]"
+              className="mt-[32px] text-[#19202D] w-full h-[80px] outline-none rounded-[6px] px-[16px]"
             />
 
-            <div className="absolute right-0 top-5 mr-[16px] mt-[24px] flex items-center gap-[24px]">
+            <div className="absolute right-0 bg-white top-5 mr-[16px] mt-[24px] flex items-center gap-[24px]">
               <img
                 onClick={() => setActive(!active)}
                 src={filter}
                 alt="filter"
               />
-              <button className="bg-[#5964E0] flex items-center justify-center rounded-[5px] w-[48px] h-[48px] ">
+              <button
+                onClick={() => filterJobsByTitle(title)}
+                className="bg-[#5964E0] flex items-center justify-center rounded-[5px] w-[48px] h-[48px] "
+              >
                 <img src={search} alt="search" />
               </button>
             </div>

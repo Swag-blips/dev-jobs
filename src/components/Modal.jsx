@@ -1,18 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import locationImg from "../assets/desktop/icon-location.svg";
 import { JobContext } from "../../context/JobsContext";
 
 const Modal = ({ active, setActive }) => {
   const [location, setLocation] = useState("");
-  const { jobs, setJobs } = useContext(JobContext);
 
-  const filterJobs = () => {
-    if (!location) {
-      return;
-    } else {
-      setJobs(jobs.filter((job) => job.location === location));
-      setActive(false);
-    }
+  const { filterJobsByLocation } = useContext(JobContext);
+
+  const filterWrapper = (location) => {
+    filterJobsByLocation(location);
+    setActive(false);
   };
 
   return (
@@ -50,7 +47,7 @@ const Modal = ({ active, setActive }) => {
 
               <div className="mx-[24px] my-[24px]">
                 <button
-                  onClick={filterJobs}
+                  onClick={() => filterWrapper(location)}
                   className="bg-[#5964E0] h-12 w-full rounded-[5px]  text-center text-white text-base font-bold"
                 >
                   Search
