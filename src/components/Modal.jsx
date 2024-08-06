@@ -1,7 +1,20 @@
-import React from "react";
-import location from "../assets/desktop/icon-location.svg";
+import React, { useContext, useState } from "react";
+import locationImg from "../assets/desktop/icon-location.svg";
+import { JobContext } from "../../context/JobsContext";
 
 const Modal = ({ active, setActive }) => {
+  const [location, setLocation] = useState("");
+  const { jobs, setJobs } = useContext(JobContext);
+
+  const filterJobs = () => {
+    if (!location) {
+      return;
+    } else {
+      setJobs(jobs.filter((job) => job.location === location));
+      setActive(false);
+    }
+  };
+
   return (
     <>
       <div
@@ -21,10 +34,11 @@ const Modal = ({ active, setActive }) => {
             <div className=" flex flex-col justify-center">
               <div className="mt-[24px] border-b-2 pb-[24px] ">
                 <div className="ml-[24px] items-center gap-[16px]  flex ">
-                  <img src={location} alt="filter-button" />
+                  <img src={locationImg} alt="filter-button" />
                   <input
                     placeholder="Filter by location..."
                     className="border-none text-left outline-none text-[#19202D] font-normal"
+                    onChange={(e) => setLocation(e.target.value)}
                   />
                 </div>
               </div>
@@ -35,7 +49,10 @@ const Modal = ({ active, setActive }) => {
               </div>
 
               <div className="mx-[24px] my-[24px]">
-                <button className="bg-[#5964E0] h-12 w-full rounded-[5px]  text-center text-white text-base font-bold">
+                <button
+                  onClick={filterJobs}
+                  className="bg-[#5964E0] h-12 w-full rounded-[5px]  text-center text-white text-base font-bold"
+                >
                   Search
                 </button>
               </div>
