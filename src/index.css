@@ -5,3 +5,20 @@
 body {
   background-color: #f4f6f8;
 }
+
+.custom-checked {
+  position: relative;
+
+  appearance: none;
+
+  background-color: #19202d;
+  opacity: 10.35%;
+
+  cursor: pointer;
+  transition: background-image 0.3s ease, border 0.3s ease;
+}
+
+.custom-checked:checked {
+  border: none;
+  background-image: linear-gradient(to bottom, #55ddff, #c058f3);
+}
