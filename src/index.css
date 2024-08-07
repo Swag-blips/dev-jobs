@@ -25,6 +25,13 @@ body {
   background-color: #5964e0;
 }
 
+.dark .custom-checked {
+  background-color: #303742;
+}
+.dark .custom-checked:checked {
+  border: none;
+  background-color: #5964e0;
+}
 .custom-checked:checked::before {
   content: "";
   position: absolute;

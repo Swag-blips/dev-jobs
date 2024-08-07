@@ -10,7 +10,7 @@ const Jobs = () => {
       {jobs.map((job) => (
         <div key={job.id} className={`px-[24px] mt-[48px]  `}>
           <Link to={`/jobs/${job.id}`}>
-            <div className="w-full relative  pl-[32px] bg-white  rounded-[6px] ">
+            <div className="w-full relative  pl-[32px] bg-white dark:bg-[#19202D] rounded-[6px] ">
               <figure
                 style={{ backgroundColor: `${job.logoBackground}` }}
                 className="w-[50px] rounded-[15px] h-[50px] absolute top-[-24px] flex items-center justify-center  z-50"
@@ -32,13 +32,13 @@ const Jobs = () => {
                 </div>
 
                 <div className="flex flex-col gap-[12px] mt-[16px]">
-                  <h2 className="font-bold text-[20px] text-left text-[#19202D]">
+                  <h2 className="font-bold dark:text-white text-[20px] text-left text-[#19202D]">
                     {job.position}
                   </h2>
                   <p className="text-[#6E8098] text-left">{job.company}</p>
                 </div>
 
-                <p className="mt-[40px] text-[#5964E0] mb-[36px]">
+                <p className="mt-[40px] text-[#5964E0] font-bold mb-[36px]">
                   {job.location}
                 </p>
               </div>
