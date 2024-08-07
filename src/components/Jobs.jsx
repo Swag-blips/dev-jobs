@@ -7,7 +7,11 @@ const Jobs = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1  2xl:mx-[165px] pb-[20px] md:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 3xl:mx-auto mt-[60px]">
+      <div
+        className={`grid grid-cols-1  ${
+          visible ? "pb-[20px]" : ""
+        } 2xl:mx-[165px]  md:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 3xl:mx-auto mt-[60px]`}
+      >
         {jobs.map((job) => (
           <div key={job.id} className={`px-[24px] mt-[48px]  `}>
             <Link to={`/jobs/${job.id}`}>

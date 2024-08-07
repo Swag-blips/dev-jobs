@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import topBg from "../assets/mobile/bg-pattern-header.svg";
 import topBgMd from "../assets/tablet/bg-pattern-header.svg";
+import topBgLg from "../assets/desktop/bg-pattern-header.svg";
 import logo from "../assets/desktop/logo.svg";
 import sun from "../assets/desktop/icon-sun.svg";
 import moon from "../assets/desktop/icon-moon.svg";
@@ -13,6 +14,7 @@ import { ThemeContext } from "../../context/ThemeProvider";
 import MdInput from "./MdInput";
 
 const Header = () => {
+
   const [active, setActive] = useState(false);
   const [title, setTitle] = useState("");
 
@@ -28,13 +30,20 @@ const Header = () => {
     <div className="font-kubmh">
       <div className="relative">
         <figure className="w-full">
-          <img src={topBg} alt="top-background" className="w-full md:hidden" />
+          <img src={topBg} alt="top-background" className="w-full md:hidden " />
         </figure>
         <figure className="w-full">
           <img
             src={topBgMd}
             alt="top-background"
-            className="w-full hidden md:block"
+            className="w-full hidden md:block xl:hidden"
+          />
+        </figure>
+        <figure className="w-full">
+          <img
+            src={topBgLg}
+            alt="top-background"
+            className="w-full hidden xl:block"
           />
         </figure>
 
