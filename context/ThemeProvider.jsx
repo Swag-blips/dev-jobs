@@ -27,12 +27,22 @@ export const ThemeProvider = ({ children }) => {
     setTheme("light");
   };
 
+  const handleToggleSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   const handleThemeSwitchToDark = () => {
     setTheme("dark");
   };
   return (
     <ThemeContext.Provider
-      value={{ handleThemeSwitchToDark, handleThemeSwitchToLight, theme }}
+      value={{
+        handleThemeSwitchToDark,
+        handleThemeSwitchToLight,
+        handleToggleSwitch,
+        setTheme,
+        theme,
+      }}
     >
       {children}
     </ThemeContext.Provider>
