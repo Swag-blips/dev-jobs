@@ -6,9 +6,9 @@ const Jobs = () => {
   const { jobs, visible } = useContext(JobContext);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-[60px]">
       {jobs.map((job) => (
-        <div key={job.id} className="px-[24px]   mt-[96px]">
+        <div key={job.id} className={`px-[24px] mt-[48px]  `}>
           <Link to={`/jobs/${job.id}`}>
             <div className="w-full relative  pl-[32px] bg-white  rounded-[6px] ">
               <figure

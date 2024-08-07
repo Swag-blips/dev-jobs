@@ -4,12 +4,30 @@ import { JobContext } from "../../context/JobsContext";
 
 const Modal = ({ active, setActive }) => {
   const [location, setLocation] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+  const {
+    filterJobsByLocation,
+    filterJobsByContract,
+    filterjobsByContractAndLocation,
+  } = useContext(JobContext);
 
-  const { filterJobsByLocation } = useContext(JobContext);
+  const filterWrapper = (location, isChecked) => {
+    if (location) {
+      filterJobsByLocation(location);
+      setActive(false);
+    }
 
-  const filterWrapper = (location) => {
-    filterJobsByLocation(location);
-    setActive(false);
+    if (location && isChecked) {
+      filterjobsByContractAndLocation(location, isChecked);
+    }
+
+    if (isChecked) {
+      filterJobsByContract(isChecked);
+    }
+  };
+
+  const checkHandler = () => {
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -41,13 +59,18 @@ const Modal = ({ active, setActive }) => {
               </div>
 
               <div className="flex items-center gap-[16px] mt-[24px] ml-[24px]">
-                <input type="checkbox" className="custom-checked w-6 h-6" />
+                <input
+                  checked={isChecked}
+                  onChange={checkHandler}
+                  type="checkbox"
+                  className="custom-checked w-6 h-6 "
+                />
                 <h2 className="font-bold text-[#19202D]">Full time only</h2>
               </div>
 
               <div className="mx-[24px] my-[24px]">
                 <button
-                  onClick={() => filterWrapper(location)}
+                  onClick={() => filterWrapper(location, isChecked)}
                   className="bg-[#5964E0] h-12 w-full rounded-[5px]  text-center text-white text-base font-bold"
                 >
                   Search

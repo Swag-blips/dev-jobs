@@ -38,6 +38,32 @@ export const JobProvider = ({ children }) => {
     setVisible(false);
   };
 
+  const filterJobsByContract = (isChecked) => {
+    if (isChecked) {
+      setJobs(jobsData);
+      setJobs((prevJob) =>
+        prevJob.filter((job) => job.contract === "Full Time")
+      );
+    } else {
+      return;
+    }
+  };
+
+  const filterjobsByContractAndLocation = (location, isChecked) => {
+    if (location && isChecked) {
+      setJobs(jobsData);
+      setJobs((prevJob) =>
+        prevJob.filter(
+          (job) =>
+            job.location.toString().toLowerCase() === location.toLowerCase() &&
+            job.contract === "Full Time"
+        )
+      );
+    } else {
+      return;
+    }
+  };
+
   useEffect(() => {
     setJobs(jobsData);
   }, []);
@@ -49,6 +75,8 @@ export const JobProvider = ({ children }) => {
         setJobs,
         filterJobsByLocation,
         filterJobsByTitle,
+        filterJobsByContract,
+        filterjobsByContractAndLocation,
         visible,
       }}
     >
