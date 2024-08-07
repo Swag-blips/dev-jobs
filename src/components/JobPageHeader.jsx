@@ -9,8 +9,12 @@ import { useNavigate } from "react-router-dom";
 const JobPageHeader = () => {
   const navigate = useNavigate();
 
-  const { handleThemeSwitchToDark, handleThemeSwitchToLight, theme } =
-    useContext(ThemeContext);
+  const {
+    handleThemeSwitchToDark,
+    handleThemeSwitchToLight,
+    handleToggleSwitch,
+    theme,
+  } = useContext(ThemeContext);
   return (
     <div className="font-kubmh">
       <div className="relative">
@@ -32,6 +36,7 @@ const JobPageHeader = () => {
                 <input
                   type="checkbox"
                   value=""
+                  onChange={handleToggleSwitch}
                   checked={theme === "dark"}
                   className="sr-only peer"
                 />
