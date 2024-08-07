@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import locationImg from "../assets/desktop/icon-location.svg";
-import { JobContext } from "../../context/JobsContext";
+import { JobContext } from "../../context/JobsProvider";
 
 const Modal = ({ active, setActive }) => {
   const [location, setLocation] = useState("");
@@ -12,17 +12,15 @@ const Modal = ({ active, setActive }) => {
   } = useContext(JobContext);
 
   const filterWrapper = (location, isChecked) => {
-    if (location) {
-      filterJobsByLocation(location);
-      setActive(false);
-    }
-
     if (location && isChecked) {
       filterjobsByContractAndLocation(location, isChecked);
-    }
-
-    if (isChecked) {
+      setActive(false);
+    } else if (location) {
+      filterJobsByLocation(location);
+      setActive(false);
+    } else if (isChecked) {
       filterJobsByContract(isChecked);
+      setActive(false);
     }
   };
 

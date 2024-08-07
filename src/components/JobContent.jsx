@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import JobPageHeader from "./JobPageHeader";
-import { JobContext } from "../../context/JobsContext";
+import { JobContext } from "../../context/JobsProvider";
 import { useParams } from "react-router-dom";
 
 const JobContent = () => {

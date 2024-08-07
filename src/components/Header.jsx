@@ -7,7 +7,7 @@ import filter from "../assets/mobile/icon-filter.svg";
 import search from "../assets/desktop/icon-search.svg";
 import iconFilterDark from "../assets/mobile/icon-filter-dark.svg";
 import Modal from "./Modal";
-import { JobContext } from "../../context/JobsContext";
+import { JobContext } from "../../context/JobsProvider";
 import { ThemeContext } from "../../context/ThemeProvider";
 
 const Header = () => {

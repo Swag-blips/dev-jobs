@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { JobContext } from "../../context/JobsContext";
+import { JobContext } from "../../context/JobsProvider";
 
 const Jobs = () => {
   const { jobs, visible } = useContext(JobContext);

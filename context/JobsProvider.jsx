@@ -50,8 +50,8 @@ export const JobProvider = ({ children }) => {
   };
 
   const filterjobsByContractAndLocation = (location, isChecked) => {
+    setJobs(jobsData);
     if (location && isChecked) {
-      setJobs(jobsData);
       setJobs((prevJob) =>
         prevJob.filter(
           (job) =>
@@ -59,6 +59,8 @@ export const JobProvider = ({ children }) => {
             job.contract === "Full Time"
         )
       );
+
+      console.log(jobs);
     } else {
       return;
     }

@@ -21,7 +21,6 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     window.localStorage.setItem("currentTheme", JSON.stringify(theme));
-    console.log(theme);
   }, [theme]);
 
   const handleThemeSwitchToLight = () => {
