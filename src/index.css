@@ -5,6 +5,9 @@
 body {
   background-color: #f4f6f8;
 }
+.dark body {
+  background-color: #121721;
+}
 
 .custom-checked {
   position: relative;
