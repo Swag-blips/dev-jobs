@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import search from "../assets/desktop/searchAlt.svg";
-import locationIcon from "../assets/desktop/icon-location.svg";
+import search from "/assets/desktop/searchAlt.svg";
+import locationIcon from "/assets/desktop/icon-location.svg";
 import { JobContext } from "../../context/JobsProvider";
 
 const MdInput = () => {

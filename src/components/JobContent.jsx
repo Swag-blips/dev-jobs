@@ -28,11 +28,7 @@ const JobContent = () => {
             style={{ backgroundColor: `${data.logoBackground}` }}
             className="w-12 h-12 absolute top-0  rounded-2xl flex items-center justify-center -mt-6"
           >
-            <img
-              src={`../src/assets/${data.logo}`}
-              alt="company-logo"
-              className=""
-            />
+            <img src={data.logo} alt="company-logo" className="" />
           </figure>
           <div className="mt-6 text-center">
             <h2 className="text-xl text-[#19202D]  dark:text-white font-bold">

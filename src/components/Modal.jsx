@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import locationImg from "../assets/desktop/icon-location.svg";
+import locationImg from "/assets/desktop/icon-location.svg";
 import { JobContext } from "../../context/JobsProvider";
 
 const Modal = ({ active, setActive }) => {

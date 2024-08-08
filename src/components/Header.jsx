@@ -1,20 +1,19 @@
 import React, { useContext, useState } from "react";
-import topBg from "../assets/mobile/bg-pattern-header.svg";
-import topBgMd from "../assets/tablet/bg-pattern-header.svg";
-import topBgLg from "../assets/desktop/bg-pattern-header.svg";
-import logo from "../assets/desktop/logo.svg";
-import sun from "../assets/desktop/icon-sun.svg";
-import moon from "../assets/desktop/icon-moon.svg";
-import filter from "../assets/mobile/icon-filter.svg";
-import search from "../assets/desktop/icon-search.svg";
-import iconFilterDark from "../assets/mobile/icon-filter-dark.svg";
+import topBg from "/assets/mobile/bg-pattern-header.svg";
+import topBgMd from "/assets/tablet/bg-pattern-header.svg";
+import topBgLg from "/assets/desktop/bg-pattern-header.svg";
+import logo from "/assets/desktop/logo.svg";
+import sun from "/assets/desktop/icon-sun.svg";
+import moon from "/assets/desktop/icon-moon.svg";
+import filter from "/assets/mobile/icon-filter.svg";
+import search from "/assets/desktop/icon-search.svg";
+import iconFilterDark from "/assets/mobile/icon-filter-dark.svg";
 import Modal from "./Modal";
 import { JobContext } from "../../context/JobsProvider";
 import { ThemeContext } from "../../context/ThemeProvider";
 import MdInput from "./MdInput";
 
 const Header = () => {
-
   const [active, setActive] = useState(false);
   const [title, setTitle] = useState("");
 

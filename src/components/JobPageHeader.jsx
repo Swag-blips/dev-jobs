@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import topBg from "../assets/mobile/bg-pattern-header.svg";
-import topBgMd from "../assets/tablet/bg-pattern-header.svg";
-import topBgLg from "../assets/desktop/bg-pattern-header.svg";
-import logo from "../assets/desktop/logo.svg";
-import sun from "../assets/desktop/icon-sun.svg";
-import moon from "../assets/desktop/icon-moon.svg";
+import topBg from "/assets/mobile/bg-pattern-header.svg";
+import topBgMd from "/assets/tablet/bg-pattern-header.svg";
+import topBgLg from "/assets/desktop/bg-pattern-header.svg";
+import logo from "/assets/desktop/logo.svg";
+import sun from "/assets/desktop/icon-sun.svg";
+import moon from "/assets/desktop/icon-moon.svg";
 import { ThemeContext } from "../../context/ThemeProvider";
 import { useNavigate } from "react-router-dom";
 

@@ -21,11 +21,7 @@ const Jobs = () => {
                     style={{ backgroundColor: `${job.logoBackground}` }}
                     className="w-[50px] rounded-[15px] h-[50px] absolute top-[-24px] flex items-center justify-center  z-50"
                   >
-                    <img
-                      src={`./src/assets/${job.logo}`}
-                      alt="company-logo"
-                      className=""
-                    />
+                    <img src={job.logo} alt="company-logo" className="" />
                   </figure>
 
                   <div className="flex flex-col justify-center pt-[48px]">
