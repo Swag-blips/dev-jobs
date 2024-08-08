@@ -35,7 +35,7 @@ const JobContent = () => {
             />
           </figure>
           <div className="mt-6 text-center">
-            <h2 className="text-xl text-[#19202D] dark:text-white font-bold">
+            <h2 className="text-xl text-[#19202D]  dark:text-white font-bold">
               {data.company}
             </h2>
             <p className="text-base text-[#6E8098] mt-2">{data.website}</p>
@@ -50,7 +50,7 @@ const JobContent = () => {
         </div>
         {/* <!------------------- > */}
 
-        <div className="bg-white -mt-8 md:flex hidden dark:bg-[#19202D] rounded-md ">
+        <div className="bg-white -mt-8 md:flex 2xl:mx-[165px] hidden dark:bg-[#19202D] rounded-md ">
           <div className="flex items-center">
             <figure
               style={{ backgroundColor: `${data.logoBackground}` }}
@@ -84,7 +84,7 @@ const JobContent = () => {
         {/* <!------------------- > */}
       </div>
       <main className="px-6 mt-8">
-        <div className="bg-white dark:bg-[#19202D] w-full flex flex-col justify-center rounded-[6px]  px-6 pt-10">
+        <div className="bg-white 2xl:mx-[165px] dark:bg-[#19202D] flex flex-col justify-center rounded-[6px]  px-6 pt-10">
           <div className="flex flex-col ">
             <div className="flex flex-col  md:flex-row md:items-center ">
               <div className="flex flex-col">
@@ -116,17 +116,17 @@ const JobContent = () => {
               </div>
             </div>
 
-            <p className="text-left text-[#6E8098] mt-[32px] text-base">
+            <p className="text-left dark:text-[#9DAEC2] text-[#6E8098] mt-[32px] text-base">
               {data.description}
             </p>
             <div className="flex flex-col justify-center gap-6 mt-16">
               <h2 className="text-[#19202D] dark:text-white text-[20px] font-bold text-left">
                 Requirements
               </h2>
-              <p className="text-left text-[#6E8098]  text-base">
+              <p className="text-left dark:text-[#9DAEC2] text-[#6E8098]  text-base">
                 {data.requirements.content}
               </p>
-              <ul className="list-disc marker:text-[#5964E0] text-left text-[#6E8098]  text-base list-inside  flex flex-col justify-center gap-[8px]">
+              <ul className="list-disc marker:text-[#5964E0] text-left dark:text-[#9DAEC2] text-[#6E8098]  text-base list-inside  flex flex-col justify-center gap-[8px]">
                 {data.requirements.items.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
@@ -137,12 +137,12 @@ const JobContent = () => {
               <h2 className="text-[#19202D] dark:text-white text-[20px] font-bold text-left">
                 What will you do
               </h2>
-              <p className="text-left text-[#6E8098]  text-base">
+              <p className="text-left text-[#6E8098] dark:text-[#9DAEC2]  text-base">
                 {data.role.content}
               </p>
             </div>
 
-            <ol className="list-decimal mb-10 marker:text-[#5964E0] marker:font-bold text-left text-[#6E8098]  text-base list-inside mt-8 flex flex-col justify-center gap-[8px]">
+            <ol className="list-decimal mb-10 dark:text-[#9DAEC2] marker:text-[#5964E0] marker:font-bold text-left text-[#6E8098]  text-base list-inside mt-8 flex flex-col justify-center gap-[8px]">
               {data.role.items.map((item, i) => (
                 <li key={i}>{item} </li>
               ))}
@@ -157,11 +157,15 @@ const JobContent = () => {
           </button>
         </a>
       </div>
-      <div className="bg-white w-full mt-[53px] px-[40px] ">
-        <div className="flex items-center justify-between">
+      <div className="bg-white hidden md:block  dark:bg-[#19202D] mt-[53px] px-[40px] 2xl:px-0 ">
+        <div className="flex items-center 2xl:px-[190px] justify-between">
           <div className="flex flex-col my-6">
-            <h2 className="text-[20px] font-bold">{data.position}</h2>
-            <p className="text-[#6E8098] ">{data.company}</p>
+            <h2 className="text-[20px] font-bold dark:text-white">
+              {data.position}
+            </h2>
+            <p className="text-[#6E8098] dark:text-[#9DAEC2] ">
+              {data.company}
+            </p>
           </div>
           <button className="bg-[#5964E0] h-12 w-[141px] rounded-[5px]  text-center text-white text-base font-bold">
             Apply now
