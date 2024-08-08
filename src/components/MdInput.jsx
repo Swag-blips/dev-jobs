@@ -33,7 +33,7 @@ const MdInput = () => {
     setIsChecked(!isChecked);
   };
   return (
-    <div className="relative 2xl:mr-[140px] 3xl:mr-0 3xl:ml-0 2xl:ml-[165px] 2xl:w-auto hidden md:block bg-white w-full h-20 mt-[46px] rounded-[6px]">
+    <div className="relative 2xl:mr-[140px] 3xl:mr-0 3xl:ml-0 dark:bg-[#19202D] 2xl:ml-[165px] 2xl:w-auto hidden md:block bg-white w-full h-20 mt-[46px] rounded-[6px]">
       <div className="flex items-center w-full">
         <div className="relative w-full">
           <input
@@ -46,7 +46,7 @@ const MdInput = () => {
           </figure>
         </div>
 
-        <div className="bg-[#E2E6EA] z-50 h-20 w-[1px]" />
+        <div className="bg-[#E2E6EA] dark:bg-[#2A3442] z-50 h-20 w-[1px]" />
 
         <div className="relative w-full">
           <input
@@ -59,7 +59,7 @@ const MdInput = () => {
           </figure>
         </div>
 
-        <div className="bg-[#E2E6EA] h-20 w-[1px]" />
+        <div className="bg-[#E2E6EA] dark:bg-[#2A3442] h-20 w-[1px]" />
 
         <div className="flex items-center gap-[16px] w-full  ml-[24px]">
           <input
