@@ -53,7 +53,7 @@ const JobContent = () => {
               className="w-[140px] h-full flex items-center justify-center "
             >
               <img
-                src={`../src/assets/${data.logo}`}
+                src={data.logo}
                 alt="company-logo"
                 className=""
               />
